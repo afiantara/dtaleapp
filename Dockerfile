@@ -1,11 +1,16 @@
-# syntax=docker/dockerfile:1
-
 FROM python:3.11.3
 
-WORKDIR /python-docker
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+WORKDIR /dtaleapp
+
+COPY requirements.txt .
+
+# install python dependencies
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
