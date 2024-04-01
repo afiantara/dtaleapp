@@ -1,0 +1,1 @@
+Detall App Flask
