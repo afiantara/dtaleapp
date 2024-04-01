@@ -4,8 +4,6 @@ FROM python:3.11.3
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR /dtaleapp
-
 COPY requirements.txt .
 
 # install python dependencies
